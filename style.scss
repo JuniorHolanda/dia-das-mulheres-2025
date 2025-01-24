@@ -1,0 +1,67 @@
+@use 'assets/styles/variables' as var;
+@use 'assets/styles/mixins';
+//pages
+@use 'assets/styles/header-site';
+
+
+
+@font-face {
+  font-family: 'begika' ;
+  src: url(assets/fonts/Begika.otf) format('opentype'), url(assets/fonts/Begika.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+a,
+ul,
+li,
+ol {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+hr{
+  width: 100%;
+  z-index: 1;
+}
+
+body {
+  @include mixins.flex($direction: column, $align: center, $justify: center);
+  width: 100%;
+  background-color: var.$clear-color-2;
+  font-family: var.$secondary-font;
+
+  // melhora a qualidade das fontes
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    // Para navegadores baseados em Gecko (Firefox)
+    text-rendering: optimizeLegibility;
+
+    // scroll suave
+    scroll-behavior: smooth;
+    
+}

@@ -1,0 +1,59 @@
+@use 'variables' as var;
+@use 'mixins';
+
+.page-header{
+  @include mixins.flex($justify: center, $align: center);
+  gap: var.$medium-space;
+  padding: var.$large-space;
+  width: 100%;
+  background-color: var.$first-color;
+  
+  .page-header__container-logo{
+    @include mixins.flex($justify: center, $align: center);
+    padding: var.$small-space;
+    width: clamp(200px, 4vw, 400px);
+    aspect-ratio: 1 / 1;
+    border: solid var.$clear-color-1 var.$micro-small-border;
+    background-color: var.$dark-color-1;
+    
+    .page-header__logo{
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+    }
+  }
+  
+  .page-header__container-info{
+    @include mixins.flex($direction: column, $justify: center, $align: start);
+    
+    .page-header__data{
+      @include mixins.font( $font: var.$first-font, $size: var.$title-2, $color: var.$dark-color-1);
+      z-index: 1;
+    }
+    
+    .page-header__dia-mulheres{
+      @include mixins.font( $font: var.$secondary-font, $size: var.$title-3, $color: var.$clear-color-1, $weight: 100);
+      letter-spacing: -5px;
+      line-height: 60px;
+    }
+    
+    .page-header__container-kit-charm{
+      position: relative;
+      letter-spacing: px;
+      z-index: 1;
+
+      .page-header__kit{
+        @include mixins.font( $font: var.$first-font, $size: var.$title-3, $color: var.$dark-color-1);
+        z-index: 1;
+        position: absolute;
+        left: 25%;
+        top: -10%;
+      }
+      .page-header__title{
+        @include mixins.font( $font: var.$secondary-font, $size: var.$title, $color: var.$second-color, $weight: 100);
+
+      }
+    }
+    
+  }
+}
