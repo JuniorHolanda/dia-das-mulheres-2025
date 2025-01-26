@@ -14,7 +14,7 @@
     width: clamp(200px, 4vw, 400px);
     aspect-ratio: 1 / 1;
     border: solid var.$clear-color-1 var.$micro-small-border;
-    background-color: var.$dark-color-1;
+    background-color: var.$third-color;
     
     .page-header__logo{
       object-fit: cover;
@@ -27,7 +27,7 @@
     @include mixins.flex($direction: column, $justify: center, $align: start);
     
     .page-header__data{
-      @include mixins.font( $font: var.$first-font, $size: var.$title-2, $color: var.$dark-color-1);
+      @include mixins.font( $font: var.$first-font, $size: var.$title-2, $color: var.$third-color);
       z-index: 1;
     }
     
@@ -35,6 +35,13 @@
       @include mixins.font( $font: var.$secondary-font, $size: var.$title-3, $color: var.$clear-color-1, $weight: 100);
       letter-spacing: -5px;
       line-height: 60px;
+      
+      @include mixins.media-queries(medium){
+        @include mixins.font( $font: var.$secondary-font, $size: clamp(2em, 5vw, 34em), $color: var.$clear-color-1, $weight: 100);
+        letter-spacing: 1px;
+        line-height: 30px;
+        
+      }
     }
     
     .page-header__container-kit-charm{
@@ -43,7 +50,7 @@
       z-index: 1;
 
       .page-header__kit{
-        @include mixins.font( $font: var.$first-font, $size: var.$title-3, $color: var.$dark-color-1);
+        @include mixins.font( $font: var.$first-font, $size: var.$title-3, $color: var.$third-color);
         z-index: 1;
         position: absolute;
         left: 25%;

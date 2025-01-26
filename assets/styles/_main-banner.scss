@@ -1,0 +1,34 @@
+@use 'variables' as var;
+@use 'mixins';
+
+.main-banner{
+  @include mixins.flex($direction: column, $align: center, $justify: center);
+  position: relative;
+  width: 80%;
+  z-index: 1;
+  
+  .main-banner__price{
+    @include mixins.flex($align: center, $justify: center);
+    @include mixins.font( $font: var.$secondary-font, $size: var.$title, $color: var.$clear-color-1, $weight: 100);
+    transform: translate(100px, -100px);
+    position: absolute;
+    z-index: 1;
+    
+    strong{
+      font-size: clamp(.5em, 1vw, 2em);
+    }
+  }
+
+  .main-banner__container{
+    @include mixins.flex($direction: column, $align: center, $justify: center);
+    width: 100%;
+    overflow: hidden;
+    border-radius: var.$large-border;
+
+    .main-banner__img{
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+    }
+  }
+}

@@ -2,6 +2,8 @@
 @use 'assets/styles/mixins';
 //pages
 @use 'assets/styles/header-site';
+@use 'assets/styles/main-banner';
+@use 'assets/styles/studioBrin';
 
 
 
@@ -54,14 +56,29 @@ body {
   width: 100%;
   background-color: var.$clear-color-2;
   font-family: var.$secondary-font;
-
+  
   // melhora a qualidade das fontes
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    // Para navegadores baseados em Gecko (Firefox)
-    text-rendering: optimizeLegibility;
-
-    // scroll suave
-    scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // Para navegadores baseados em Gecko (Firefox)
+  text-rendering: optimizeLegibility;
+  
+  // scroll suave
+  scroll-behavior: smooth;
+  main{
+    @include mixins.flex($direction: column, $align: center, $justify: start);
+    gap: var.$large-space;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 300vh;
     
+    &::after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 300px;
+      background-color: var.$first-color;
+    }
+  }
 }

@@ -15,7 +15,7 @@
   width: clamp(200px, 4vw, 400px);
   aspect-ratio: 1/1;
   border: solid #ececec 0.5em;
-  background-color: #434a54;
+  background-color: #2b2a8f;
 }
 .page-header .page-header__container-logo .page-header__logo {
   -o-object-fit: cover;
@@ -33,7 +33,7 @@
 .page-header .page-header__container-info .page-header__data {
   font-family: "cortado", sans-serif;
   font-size: clamp(2em, 2vw, 5em);
-  color: #434a54;
+  color: #2b2a8f;
   z-index: 1;
 }
 .page-header .page-header__container-info .page-header__dia-mulheres {
@@ -44,6 +44,16 @@
   letter-spacing: -5px;
   line-height: 60px;
 }
+@media (max-width: 700px) {
+  .page-header .page-header__container-info .page-header__dia-mulheres {
+    font-family: "begika", "Times New Roman", Times, serif;
+    font-size: clamp(2em, 5vw, 34em);
+    font-weight: 100;
+    color: #ececec;
+    letter-spacing: 1px;
+    line-height: 30px;
+  }
+}
 .page-header .page-header__container-info .page-header__container-kit-charm {
   position: relative;
   letter-spacing: px;
@@ -52,7 +62,7 @@
 .page-header .page-header__container-info .page-header__container-kit-charm .page-header__kit {
   font-family: "cortado", sans-serif;
   font-size: clamp(2em, 4vw, 10em);
-  color: #434a54;
+  color: #2b2a8f;
   z-index: 1;
   position: absolute;
   left: 25%;
@@ -63,6 +73,186 @@
   font-size: clamp(3em, 7vw, 15em);
   font-weight: 100;
   color: #f2d82c;
+}
+
+.main-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 80%;
+  z-index: 1;
+}
+.main-banner .main-banner__price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "begika", "Times New Roman", Times, serif;
+  font-size: clamp(3em, 7vw, 15em);
+  font-weight: 100;
+  color: #ececec;
+  transform: translate(100px, -100px);
+  position: absolute;
+  z-index: 1;
+}
+.main-banner .main-banner__price strong {
+  font-size: clamp(0.5em, 1vw, 2em);
+}
+.main-banner .main-banner__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 3em;
+}
+.main-banner .main-banner__container .main-banner__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 100%;
+}
+
+.studioBrin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 100vh;
+  gap: 2em;
+}
+.studioBrin .studioBrin__title {
+  font-family: "begika", "Times New Roman", Times, serif;
+  font-size: clamp(2em, 4vw, 10em);
+  font-weight: 100;
+  color: #ececec;
+  padding: 1em;
+  height: auto;
+  border-radius: 0.5em;
+  text-align: center;
+  background-color: #e64968;
+}
+.studioBrin .studioBrin__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 2em;
+}
+.studioBrin .studioBrin__content .studioBrin__controlls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+.studioBrin .studioBrin__content .studioBrin__controlls .stidoBrin__input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "begika", "Times New Roman", Times, serif;
+  font-size: clamp(2em, 4vw, 10em);
+  font-weight: 100;
+  color: #ececec;
+  position: relative;
+  width: 100%;
+  height: 50%;
+}
+.studioBrin .studioBrin__content .studioBrin__controlls .stidoBrin__input-container .stidoBrin__label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ececec;
+  width: 100%;
+  height: 100%;
+}
+.studioBrin .studioBrin__content .studioBrin__controlls .stidoBrin__input-container .stidoBrin__input {
+  position: absolute;
+  opacity: 0;
+}
+.studioBrin .studioBrin__content .studioBrin__controlls .studioBrin__container-colors {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5em;
+  width: 100%;
+  height: 50%;
+}
+.studioBrin .studioBrin__content .studioBrin__controlls .studioBrin__container-colors :nth-child(1) {
+  background-color: #8a716a;
+}
+.studioBrin .studioBrin__content .studioBrin__controlls .studioBrin__container-colors :nth-child(2) {
+  background-color: #5b3a31;
+}
+.studioBrin .studioBrin__content .studioBrin__controlls .studioBrin__container-colors :nth-child(3) {
+  background-color: #d5a0aa;
+}
+.studioBrin .studioBrin__content .studioBrin__controlls .studioBrin__container-colors :nth-child(4) {
+  background-color: #d2065f;
+}
+.studioBrin .studioBrin__content .studioBrin__controlls .studioBrin__container-colors :nth-child(5) {
+  background-color: #151515;
+}
+.studioBrin .studioBrin__content .studioBrin__controlls .studioBrin__container-colors .studioBrin__btn-color {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "cortado", sans-serif;
+  font-size: clamp(1em, 1vw, 1.5em);
+  font-weight: 100;
+  color: #ececec;
+  height: 100%;
+  width: 100%;
+  flex-grow: 1;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.studioBrin .studioBrin__content .studioBrin__controlls .studioBrin__container-colors .studioBrin__btn-color:hover {
+  filter: brightness(120%);
+  font-size: calc(clamp(1em, 1vw, 1.5em) * 1.1);
+}
+.studioBrin .studioBrin__content .studioBrin__controlls .studioBrin__container-colors .studioBrin__btn-color--active {
+  transition: 0.3s;
+  font-size: clamp(1em, 1vw, 1.5em);
+  border: solid 0.5em #f2d82c;
+}
+.studioBrin .studioBrin__content .studioBrin__img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  width: 50%;
+  height: 100%;
+  border-radius: 0.5em;
+}
+.studioBrin .studioBrin__content .studioBrin__img-container .studioBrin__color-img {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.studioBrin .studioBrin__content .studioBrin__img-container .stidoBrin__background-img {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 
 @font-face {
@@ -120,4 +310,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 3em;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 300vh;
+}
+body main::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 300px;
+  background-color: #e64968;
 }/*# sourceMappingURL=style.css.map */
