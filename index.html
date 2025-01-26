@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="module" src="script.js" defer></script>
   <link rel="stylesheet" href="https://use.typekit.net/bie6gfv.css"> <!--Font Cortado-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
   <title>Dia das Mulheres</title>
 </head>
@@ -38,12 +39,12 @@
       </div>
       <div class="studioBrin__content">
         <div class="studioBrin__controlls">
-          <div class="stidoBrin__input-container">
-            <label class="stidoBrin__label" for="inputStudioBrin">Adicionar Logo</label>
-            <input class="stidoBrin__input" type="file" accept=".jpg, .pdf, .svg, .png" id="inputStudioBrin">
-            <!-- <span class="stidoBrin__file-name" id="fileName">
-              <img src="" alt="">
-            </span> -->
+          <div class="studioBrin__input-container" id="studioBrinInput">
+            <label class="studidoBrin__label" for="inputStudioBrin" id="dragAreaStudioBrin">
+              <i class="fa-solid fa-arrow-up-from-bracket"></i>
+              Clique para escolher o logo, ou arraste
+            </label>
+            <input class="studioBrin__input" type="file" accept=".svg, .png" id="inputStudioBrin">
           </div>
           <div class="studioBrin__container-colors">
             <button class="studioBrin__btn-color" data-color="cor-areia">Areia</button>
@@ -53,7 +54,7 @@
             <button class="studioBrin__btn-color" data-color="cor-preto">Preto</button>
           </div>
         </div>
-        <div class="studioBrin__img-container">
+        <div class="studioBrin__img-container" id="studioBrinImg">
           <img class="studioBrin__color-img" src="assets/img/studioBrin/cor-pink.png" alt="uma carteira aberta e outra fechada">
           <img class="stidoBrin__background-img" src="assets/img/studioBrin/background.jpg" alt="um fundo rosa com dois circulos de feito de barbante e uma frase escrita feliz dia das mulheres">
 

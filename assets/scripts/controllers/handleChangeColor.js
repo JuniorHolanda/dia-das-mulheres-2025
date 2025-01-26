@@ -4,9 +4,9 @@ const listBtnColor = document.querySelectorAll('.studioBrin__btn-color');
 const colorObject = document.querySelector('.studioBrin__color-img');
 
 function handleChangeColor() {
-  listBtnColor.forEach((element, index)=>{
+  listBtnColor.forEach(element => {
     element.addEventListener('click', ()=>{
-      changeColor(element, index, listBtnColor, colorObject);
+      changeColor(element, listBtnColor, colorObject);
     });
   });
 }

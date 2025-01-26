@@ -4,7 +4,6 @@
 .studioBrin{
   @include mixins.flex($direction: column, $align: center, $justify: center);
   width: 80%;
-  height: 100vh;
   gap: var.$medium-space;
   
   .studioBrin__title{
@@ -15,45 +14,74 @@
     text-align: center;
     background-color: var.$first-color;
   }
-
+  
   .studioBrin__content{
     @include mixins.flex($align: center, $justify: center);
     width: 100%;
     height: 100%;
     gap: var.$medium-space;
-
+    
     .studioBrin__controlls{
       @include mixins.flex($direction: column, $align: center, $justify: center);
+      gap: var.$small-space;
+      padding: var.$small-space;
+      overflow: hidden;
       width: 50%;
       height: 100%;
       border-radius: var.$micro-small-space;
-      overflow: hidden;
+      background-color: var.$clear-color-1;
 
-      .stidoBrin__input-container{
+
+      .studioBrin__input-container{
         @include mixins.flex($direction: column, $align: center, $justify: center);
-        @include mixins.font( $font: var.$secondary-font, $size: var.$title-3, $color: var.$clear-color-1, $weight: 100);
+        @include mixins.font( $font: var.$secondary-font, $size: var.$title-2, $color: var.$clear-color-1, $weight: 100);
+        padding: 16px;
         position: relative;
         width: 100%;
-        height: 50%;
-        
-        .stidoBrin__label{
-          @include mixins.flex($direction: column, $align: center, $justify: center);
-          background-color: var.$clear-color-1;
-          width: 100%;
-          height: 100%;
+        height: 100%;
+        transition: .3s;
+        border-radius: var.$slim-border;
+        background-color: var.$clear-color-3;
+
+        &:hover{
+          background-color: var.$clear-color-2;
         }
         
-        .stidoBrin__input{
+        .studidoBrin__label{
+          @include mixins.flex($direction: column, $align: center, $justify: center);
+          gap: var.$micro-small-space;
+          padding: var.$micro-small-space;
+          text-align: center;
+          width: 100%;
+          height: 100%;
+          cursor: pointer;
+          border: dashed var.$clear-color-1;
+          border-radius: var.$slim-border;
+          transition: background .3s;
+
+
+          @include mixins.media-queries(medium){
+            i{
+              font-size: clamp(2em, 1.5vw, 2em);
+            }
+            font-size: clamp(1em, 1vw, 2em);
+          }
+        }
+ 
+        .studioBrin__input{
           position: absolute;
           opacity: 0;
         }
+      }
+
+      .studioBrin__input-container--active{
+        background-color: var.$clear-color-2;
       }
       
       .studioBrin__container-colors{
         @include mixins.flex($align: center, $justify: space-between);
         gap: var.$micro-small-space;
-        width: 100%;
-        height: 50%;
+        width: 100%;        
         
         :nth-child(1){
           background-color: #8a716a;
@@ -74,11 +102,12 @@
         .studioBrin__btn-color{
           @include mixins.flex($align: center, $justify: center);
           @include mixins.font( $font: var.$first-font, $size: var.$text, $color: var.$clear-color-1, $weight: 100);
-          height: 100%;
-          width: 100%;
           flex-grow: 1;
           cursor: pointer;
+          width: 100%;
+          aspect-ratio: 1 / 1;
           transition: .3s;
+          border-radius: var.$slim-border;
 
           &:hover{
             filter: brightness(120%);
@@ -89,7 +118,7 @@
         .studioBrin__btn-color--active{
           transition: .3s;
           font-size: var.$text;
-          border: solid var.$micro-small-border var.$second-color;
+          box-shadow: inset 0 0 0 var.$micro-small-border var.$clear-color-2;
         }
       }
     }
@@ -101,13 +130,26 @@
     overflow: hidden;
     width: 50%;
     height: 100%;
+    aspect-ratio: 16 / 10;
     border-radius: var.$micro-small-border;
+
+    .studioBrin__client-logo{
+      position: absolute;
+      width: clamp(2em, 6vw, 400px);
+      max-height: 200px;
+      z-index: 2;
+      right: 12%;
+
+      @include mixins.media-queries(medium){
+        width: clamp(1.3em, 3vw, 200px);
+        right: 15%;
+      }
+    }
 
     .studioBrin__color-img{
       position: absolute;
       object-fit: cover;
       width: 100%;
-      height: 100%;
       z-index: 1;
     }
     
@@ -115,7 +157,6 @@
       position: absolute;
       object-fit: cover;
       width: 100%;
-      height: 100%;
       z-index: 0;
     }
 
