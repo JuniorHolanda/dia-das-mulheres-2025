@@ -4,6 +4,8 @@
 @use 'assets/styles/header-site';
 @use 'assets/styles/main-banner';
 @use 'assets/styles/studioBrin';
+@use 'assets/styles/cards';
+@use 'assets/styles/footer-page';
 
 
 
@@ -71,7 +73,6 @@ body {
     position: relative;
     z-index: 1;
     width: 100%;
-    height: 300vh;
     
     &::after {
       position: absolute;

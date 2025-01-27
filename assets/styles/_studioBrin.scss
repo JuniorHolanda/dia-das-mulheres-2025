@@ -136,8 +136,9 @@
     .studioBrin__client-logo{
       position: absolute;
       width: clamp(2em, 6vw, 400px);
-      max-height: 200px;
       z-index: 2;
+      transform: translateY(-50%);
+      top: 52%;
       right: 12%;
 
       @include mixins.media-queries(medium){

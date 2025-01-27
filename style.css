@@ -268,8 +268,9 @@
 .studioBrin .studioBrin__content .studioBrin__img-container .studioBrin__client-logo {
   position: absolute;
   width: clamp(2em, 6vw, 400px);
-  max-height: 200px;
   z-index: 2;
+  transform: translateY(-50%);
+  top: 52%;
   right: 12%;
 }
 @media (max-width: 1000px) {
@@ -291,6 +292,112 @@
      object-fit: cover;
   width: 100%;
   z-index: 0;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70vh;
+  padding: 2em 10%;
+  gap: 2em;
+  background-color: #bcbecc;
+}
+.cards .cards__container {
+  display: grid;
+  grid-template: 0.2fr 7fr 2.8fr/7fr 3fr;
+  padding: 1em;
+  gap: 1em;
+  background-color: #ececec;
+  border-radius: 1em;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.0901960784);
+  transition: 0.3s;
+}
+.cards .cards__container:hover {
+  width: 130%;
+}
+.cards .cards__container .cards__details {
+  font-family: #e64968;
+  font-size: clamp(1em, 1vw, 1.5em);
+  font-weight: 100;
+  color: #2b2a8f;
+  grid-area: 1/1/2/3;
+  width: 100%;
+}
+.cards .cards__container .cards__container-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: 2/1/3/3;
+  gap: 1em;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.cards .cards__container .cards__container-img .cards__image-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.cards .cards__container .cards__container-img .cards__image-main .cards__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 100%;
+  height: 100%;
+}
+.cards .cards__container .cards_title {
+  font-family: "cortado", sans-serif;
+  font-size: clamp(1em, 2vw, 3em);
+  font-weight: 100;
+  color: #2b2a8f;
+  grid-area: 3/1/4/2;
+}
+.cards .cards__container .cards__text {
+  font-family: "Roboto", serif;
+  font-size: clamp(1em, 1vw, 1.5em);
+  font-weight: 100;
+  color: #2e313a;
+  grid-area: 4/1/5/3;
+}
+.cards .cards__container .cards__price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", serif;
+  font-size: clamp(1em, 1vw, 1.5em);
+  font-weight: 100;
+  color: #ffffff;
+  grid-area: 3/2/4/3;
+  border-radius: 3px;
+  background-color: rgb(92, 197, 92);
+}
+
+.footer-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #bcbecc;
+  padding: 3em 10%;
+  gap: 3em;
+}
+.footer-page .footer-page__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+  width: 100%;
+  border: solid red;
 }
 
 @font-face {
@@ -358,7 +465,6 @@ body main {
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 300vh;
 }
 body main::after {
   position: absolute;

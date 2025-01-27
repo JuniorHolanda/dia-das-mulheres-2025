@@ -1,0 +1,77 @@
+@use 'variables' as var;
+@use 'mixins';
+
+.cards{
+  @include mixins.flex($align: center, $justify: center);
+  width: 100%;
+  height: 70vh;
+  padding: var.$medium-space 10%;
+  gap: var.$medium-space;
+  background-color: var.$clear-color-3;
+
+  
+  .cards__container{
+    display: grid;
+    grid-template: .2fr 7fr 2.8fr / 7fr 3fr;
+    padding: var.$small-space;
+    gap: var.$small-space;
+    background-color: var.$clear-color-1;
+    border-radius: var.$small-border;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 10px 1px #00000017;
+    transition: .3s;
+
+    &:hover{
+        width: 130%;
+    }
+
+    .cards__details{
+      @include mixins.font( $font: var.$first-color, $size: var.$text, $color: var.$third-color, $weight: 100);
+      grid-area: 1/1/2/3;
+      width: 100%;
+    }
+    
+    .cards__container-img{
+      @include mixins.flex($align: center, $justify: center);
+      grid-area: 2/1/3/3;
+      gap: var.$small-space;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      
+      .cards__image-main{ 
+        @include mixins.flex($align: center, $justify: center);
+        border-radius: var.$slim-border;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        
+        .cards__img{
+          object-fit: cover;
+          object-position: center;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      
+    }
+    
+    .cards_title{
+      @include mixins.font( $font: var.$first-font, $size: var.$title-2, $color: var.$third-color, $weight: 100);
+      grid-area: 3/1/4/2;
+    }
+    .cards__text{
+      @include mixins.font( $font: var.$simple-font, $size: var.$text, $color: var.$dark-color, $weight: 100);
+      grid-area: 4/1/5/3;
+    }
+    
+    .cards__price{
+      @include mixins.flex($align: center, $justify: center);
+      @include mixins.font( $font: var.$simple-font, $size: var.$text, $color: var.$clear-color-2, $weight: 100);
+      grid-area: 3/2/4/3;
+      border-radius: var.$slim-border;
+      background-color: rgb(92, 197, 92);
+    }
+  }
+}
