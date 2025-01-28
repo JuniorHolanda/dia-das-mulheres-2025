@@ -11,15 +11,16 @@
   background-color: var.$clear-color-1;
 
   .footer-page__rules{
-    @include mixins.flex($align: start, $justify: center);
+    @include mixins.flex($align: space-between, $justify: center);
     width: 100%;
-    gap: var.$small-space;
+    gap: var.$large-space;
     padding: var.$small-space;
     text-align: center;
     border-radius: var.$small-border;
+    background-color: var.$dark-color;
 
     .footer-page-titles{
-      @include mixins.font( $font: var.$simple-font, $size: var.$text, $color: var.$dark-color, $weight: 900);
+      @include mixins.font( $font: var.$simple-font, $size: var.$text, $color: var.$clear-color-1, $weight: 900);
       text-align: start;
     }
   }
