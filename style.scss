@@ -81,5 +81,26 @@ body {
       height: 300px;
       background-color: var.$first-color;
     }
+    
+    .btn-action{
+      @include mixins.flex($direction: column, $align: center, $justify: center);
+      width: 100%;
+      margin-bottom: var.$large-space;
+
+      .btn-action__link{
+        background-color: var.$first-color;
+        padding: var.$small-border;
+        border-radius: var.$slim-border;
+
+        @include mixins.font( $font: var.$first-font, $size: var.$title-2, $color: var.$clear-color-1, $weight: 900);
+        letter-spacing: 7px;
+        transition: .3s;
+
+        &:hover{
+          background-color: #f05b78;
+        }
+      }
+
+    }
   }
 }

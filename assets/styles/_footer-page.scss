@@ -4,69 +4,133 @@
 .footer-page{
   @include mixins.flex($direction: column, $align: center, $justify: center);
   width: 100%;
-  height: 60vh;
+  height: 100%;
   background-color: var.$clear-color-3;
-  padding: var.$large-space 10%;
-  gap: var.$large-space;
-  
-  .footer-page__content{
-    @include mixins.flex($align: center, $justify: space-between);
-    gap: var.$medium-space;
-    width: 100%;
-    
-    .footer-page__logo-container{
-      @include mixins.flex($justify: center, $align: center);
-      padding: var.$small-space;
-      height: 100%;
-      aspect-ratio: 1 / 1;
-      border: solid var.$clear-color-1 var.$micro-small-border;
-      border-radius: var.$small-border;
-      background-color: var.$third-color;
-      
-      .footer-page__logo{
-        object-fit: cover;
-        object-position: center;
-        width: 100%;
-      }
-    }
-  }
-  
+  padding: 0 10%;
+  gap: var.$small-space;
+  background-color: var.$clear-color-1;
+
   .footer-page__rules{
-    @include mixins.flex($direction: column, $align: center, $justify: center);
-    text-align: center;
+    @include mixins.flex($align: start, $justify: center);
+    width: 100%;
+    gap: var.$small-space;
     padding: var.$small-space;
-    height: 100%;
-    background-color: var.$dark-color;
+    text-align: center;
     border-radius: var.$small-border;
 
-    
     .footer-page-titles{
-      @include mixins.font( $font: var.$simple-font, $size: var.$text, $color: var.$clear-color-2, $weight: 900);
+      @include mixins.font( $font: var.$simple-font, $size: var.$text, $color: var.$dark-color, $weight: 900);
       text-align: start;
     }
   }
   
-  .footer-page__contact{
-    @include mixins.flex($align: start, $justify: start);
-    border: solid maroon;
-    gap: var.$small-space;
-    @include mixins.font( $font: var.$simple-font, $size: var.$text, $color: var.$third-color, $weight: 900);
+  .footer-page__content{
+    @include mixins.flex($justify: center, $align: flex-start);
+    gap: var.$medium-space;
+    width: 100%;
+    height: 45vh;
     
-    
-    .footer-page__email-container{
-      @include mixins.flex($direction: column, $align: start, $justify: start);
-      
-      .footer-page__email-title{
-        @include mixins.font($font: var.$simple-font, $size: var.$text, $color: var.$third-color, $weight: 900);
-      }
-      .footer-page__email{
-        @include mixins.font($font: var.$simple-font, $size: var.$text, $color: var.$third-color, $weight: 300);
-      }
-    }
-
     .footer-page__phone{
-      
-    }
+      @include mixins.flex($direction: column, $align: start, $justify: space-between);
+      gap: var.$small-space;
+      height: 100%;
+      width: 33%;    
+  
+      .footer-page__perfil-container{
+        @include mixins.flex($align: center, $justify: center);
+        gap: var.$micro-small-space;
+        border-radius: var.$slim-border;
+        background-color: var.$clear-color-1;
+        width: 100%;
+        height: calc(33.3% - var.$micro-small-space);
+        box-shadow: 0 0 10px 1px #0000001f;
+        transition: .3s;
+        overflow: hidden;
+        color: var.$dark-color;
 
+        &:hover{
+          transform: translateX(-10px);
+        }
+        
+        .footer-page__container-img{
+          @include mixins.flex($align: center, $justify: center);
+          width: 25%;
+          height: 100%;
+          background-color: white;
+          overflow: hidden;
+          
+          .footer-page__img-profile{
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            height: 100%;
+          }  
+        }
+        .footer-page__data-profile{
+          @include mixins.flex($direction: column, $align: flex-start, $justify: center);
+          padding: var.$micro-small-space;
+          width: 75%;
+          height: 100%;
+  
+          .footer-page__name-fone{
+            @include mixins.font($font: var.$simple-font, $size: var.$text, $color: var.$third-color, $weight: 900);
+            border-bottom: solid var.$third-color 1px;
+            margin-bottom: var.$micro-small-space;
+          }
+          .footer-page__container-whats{
+    
+            .footer-page__numbers{
+              @include mixins.font($font: var.$simple-font, $size: var.$text, $color: var.$third-color, $weight: 300);
+            }
+          }
+    
+          .footer-page__container-email{
+            
+            .footer-page__email{
+              @include mixins.font($font: var.$simple-font, $size: var.$text, $color: var.$third-color, $weight: 300);
+            }
+          }
+        }
+      }
+    }
+    .footer-page__site-container, .footer-page__instagram-container{
+      @include mixins.flex($direction: column, $align: center, $justify: center);
+      position: relative;
+      @include mixins.font($font: var.$simple-font, $size: var.$text, $color: var.$third-color, $weight: 900);
+      border-radius: var.$small-border;
+      width: 33%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+      
+      .footer-page__link-site, .footer-page__link-instagram{
+        @include mixins.flex($direction: column, $align: center, $justify: center);
+        @include mixins.font($font: var.$simple-font, $size: var.$title-2, $color: var.$third-color, $weight: 900);
+        padding: var.$micro-small-space;
+        text-align: center;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        transition: .3s;
+        
+        &:hover{
+          color: var.$clear-color-1;
+          background-color: #00000049;
+        }
+      }
+      
+      .footer-page__img-site, .footer-page__img-instagram{
+        filter: blur(3px);
+        position: absolute;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+    }
+  }
+  .ass{
+    @include mixins.font($font: var.$simple-font, $size: var.$text, $color: var.$clear-color-2, $weight: 900);
   }
 }

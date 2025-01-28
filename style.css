@@ -122,6 +122,7 @@
   justify-content: center;
   align-items: center;
   width: 80%;
+  height: 100vh;
   gap: 2em;
 }
 .studioBrin .studioBrin__title {
@@ -130,7 +131,6 @@
   font-weight: 100;
   color: #ececec;
   padding: 1em;
-  height: auto;
   border-radius: 0.2em;
   text-align: center;
   background-color: #e64968;
@@ -140,7 +140,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 80%;
   gap: 2em;
 }
 .studioBrin .studioBrin__content .studioBrin__controlls {
@@ -149,7 +149,6 @@
   justify-content: center;
   align-items: center;
   gap: 1em;
-  padding: 1em;
   overflow: hidden;
   width: 50%;
   height: 100%;
@@ -233,7 +232,7 @@
   justify-content: center;
   align-items: center;
   font-family: "cortado", sans-serif;
-  font-size: clamp(1em, 1vw, 1.5em);
+  font-size: clamp(0.5em, 1vw, 1em);
   font-weight: 100;
   color: #ececec;
   flex-grow: 1;
@@ -245,11 +244,11 @@
 }
 .studioBrin .studioBrin__content .studioBrin__controlls .studioBrin__container-colors .studioBrin__btn-color:hover {
   filter: brightness(120%);
-  font-size: calc(clamp(1em, 1vw, 1.5em) * 1.1);
+  font-size: calc(clamp(0.5em, 1vw, 1em) * 1.1);
 }
 .studioBrin .studioBrin__content .studioBrin__controlls .studioBrin__container-colors .studioBrin__btn-color--active {
   transition: 0.3s;
-  font-size: clamp(1em, 1vw, 1.5em);
+  font-size: clamp(0.5em, 1vw, 1em);
   box-shadow: inset 0 0 0 0.2em #ffffff;
 }
 .studioBrin .studioBrin__content .studioBrin__img-container {
@@ -321,7 +320,7 @@
 }
 .cards .cards__container .cards__details {
   font-family: #e64968;
-  font-size: clamp(1em, 1vw, 1.5em);
+  font-size: clamp(0.5em, 1vw, 1em);
   font-weight: 100;
   color: #2b2a8f;
   grid-area: 1/1/2/3;
@@ -363,7 +362,7 @@
 }
 .cards .cards__container .cards__text {
   font-family: "Roboto", serif;
-  font-size: clamp(1em, 1vw, 1.5em);
+  font-size: clamp(0.5em, 1vw, 1em);
   font-weight: 100;
   color: #2e313a;
   grid-area: 4/1/5/3;
@@ -373,7 +372,7 @@
   justify-content: center;
   align-items: center;
   font-family: "Roboto", serif;
-  font-size: clamp(1em, 1vw, 1.5em);
+  font-size: clamp(0.5em, 1vw, 1em);
   font-weight: 100;
   color: #ffffff;
   grid-area: 3/2/4/3;
@@ -387,83 +386,163 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 60vh;
+  height: 100%;
   background-color: #bcbecc;
-  padding: 3em 10%;
-  gap: 3em;
+  padding: 0 10%;
+  gap: 1em;
+  background-color: #ececec;
+}
+.footer-page .footer-page__rules {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  gap: 1em;
+  padding: 1em;
+  text-align: center;
+  border-radius: 1em;
+}
+.footer-page .footer-page__rules .footer-page-titles {
+  font-family: "Roboto", serif;
+  font-size: clamp(0.5em, 1vw, 1em);
+  font-weight: 900;
+  color: #2e313a;
+  text-align: start;
 }
 .footer-page .footer-page__content {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   gap: 2em;
   width: 100%;
+  height: 45vh;
 }
-.footer-page .footer-page__content .footer-page__logo-container {
+.footer-page .footer-page__content .footer-page__phone {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1em;
+  height: 100%;
+  width: 33%;
+}
+.footer-page .footer-page__content .footer-page__phone .footer-page__perfil-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1em;
-  height: 100%;
-  aspect-ratio: 1/1;
-  border: solid #ececec 0.2em;
-  border-radius: 1em;
-  background-color: #2b2a8f;
+  gap: 0.5em;
+  border-radius: 3px;
+  background-color: #ececec;
+  width: 100%;
+  height: calc(33.3% - 0.5em);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1215686275);
+  transition: 0.3s;
+  overflow: hidden;
+  color: #2e313a;
 }
-.footer-page .footer-page__content .footer-page__logo-container .footer-page__logo {
+.footer-page .footer-page__content .footer-page__phone .footer-page__perfil-container:hover {
+  transform: translateX(-10px);
+}
+.footer-page .footer-page__content .footer-page__phone .footer-page__perfil-container .footer-page__container-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 100%;
+  background-color: white;
+  overflow: hidden;
+}
+.footer-page .footer-page__content .footer-page__phone .footer-page__perfil-container .footer-page__container-img .footer-page__img-profile {
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
   width: 100%;
+  height: 100%;
 }
-.footer-page .footer-page__rules {
+.footer-page .footer-page__content .footer-page__phone .footer-page__perfil-container .footer-page__data-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0.5em;
+  width: 75%;
+  height: 100%;
+}
+.footer-page .footer-page__content .footer-page__phone .footer-page__perfil-container .footer-page__data-profile .footer-page__name-fone {
+  font-family: "Roboto", serif;
+  font-size: clamp(0.5em, 1vw, 1em);
+  font-weight: 900;
+  color: #2b2a8f;
+  border-bottom: solid #2b2a8f 1px;
+  margin-bottom: 0.5em;
+}
+.footer-page .footer-page__content .footer-page__phone .footer-page__perfil-container .footer-page__data-profile .footer-page__container-whats .footer-page__numbers {
+  font-family: "Roboto", serif;
+  font-size: clamp(0.5em, 1vw, 1em);
+  font-weight: 300;
+  color: #2b2a8f;
+}
+.footer-page .footer-page__content .footer-page__phone .footer-page__perfil-container .footer-page__data-profile .footer-page__container-email .footer-page__email {
+  font-family: "Roboto", serif;
+  font-size: clamp(0.5em, 1vw, 1em);
+  font-weight: 300;
+  color: #2b2a8f;
+}
+.footer-page .footer-page__content .footer-page__site-container, .footer-page .footer-page__content .footer-page__instagram-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 1em;
-  height: 100%;
-  background-color: #2e313a;
-  border-radius: 1em;
-}
-.footer-page .footer-page__rules .footer-page-titles {
+  position: relative;
   font-family: "Roboto", serif;
-  font-size: clamp(1em, 1vw, 1.5em);
-  font-weight: 900;
-  color: #ffffff;
-  text-align: start;
-}
-.footer-page .footer-page__contact {
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  border: solid maroon;
-  gap: 1em;
-  font-family: "Roboto", serif;
-  font-size: clamp(1em, 1vw, 1.5em);
+  font-size: clamp(0.5em, 1vw, 1em);
   font-weight: 900;
   color: #2b2a8f;
+  border-radius: 1em;
+  width: 33%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
 }
-.footer-page .footer-page__contact .footer-page__email-container {
+.footer-page .footer-page__content .footer-page__site-container .footer-page__link-site, .footer-page .footer-page__content .footer-page__site-container .footer-page__link-instagram, .footer-page .footer-page__content .footer-page__instagram-container .footer-page__link-site, .footer-page .footer-page__content .footer-page__instagram-container .footer-page__link-instagram {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
-}
-.footer-page .footer-page__contact .footer-page__email-container .footer-page__email-title {
+  justify-content: center;
+  align-items: center;
   font-family: "Roboto", serif;
-  font-size: clamp(1em, 1vw, 1.5em);
+  font-size: clamp(1em, 2vw, 3em);
   font-weight: 900;
   color: #2b2a8f;
+  padding: 0.5em;
+  text-align: center;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
 }
-.footer-page .footer-page__contact .footer-page__email-container .footer-page__email {
+.footer-page .footer-page__content .footer-page__site-container .footer-page__link-site:hover, .footer-page .footer-page__content .footer-page__site-container .footer-page__link-instagram:hover, .footer-page .footer-page__content .footer-page__instagram-container .footer-page__link-site:hover, .footer-page .footer-page__content .footer-page__instagram-container .footer-page__link-instagram:hover {
+  color: #ececec;
+  background-color: rgba(0, 0, 0, 0.2862745098);
+}
+.footer-page .footer-page__content .footer-page__site-container .footer-page__img-site, .footer-page .footer-page__content .footer-page__site-container .footer-page__img-instagram, .footer-page .footer-page__content .footer-page__instagram-container .footer-page__img-site, .footer-page .footer-page__content .footer-page__instagram-container .footer-page__img-instagram {
+  filter: blur(3px);
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.footer-page .ass {
   font-family: "Roboto", serif;
-  font-size: clamp(1em, 1vw, 1.5em);
-  font-weight: 300;
-  color: #2b2a8f;
+  font-size: clamp(0.5em, 1vw, 1em);
+  font-weight: 900;
+  color: #ffffff;
 }
+
 @font-face {
   font-family: "begika";
   src: url(assets/fonts/Begika.otf) format("opentype"), url(assets/fonts/Begika.ttf) format("truetype");
@@ -536,4 +615,26 @@ body main::after {
   width: 100%;
   height: 300px;
   background-color: #e64968;
+}
+body main .btn-action {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 3em;
+}
+body main .btn-action .btn-action__link {
+  background-color: #e64968;
+  padding: 1em;
+  border-radius: 3px;
+  font-family: "cortado", sans-serif;
+  font-size: clamp(1em, 2vw, 3em);
+  font-weight: 900;
+  color: #ececec;
+  letter-spacing: 7px;
+  transition: 0.3s;
+}
+body main .btn-action .btn-action__link:hover {
+  background-color: #f05b78;
 }/*# sourceMappingURL=style.css.map */
