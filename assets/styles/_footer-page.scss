@@ -37,7 +37,6 @@
   }
   
   .footer-page__content{
-    border: solid navy;
     @include mixins.flex($justify: center, $align: flex-start);
     gap: var.$medium-space;
     width: 100%;

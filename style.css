@@ -7,6 +7,14 @@
   width: 100%;
   background-color: #e64968;
 }
+@media (max-width: 1000px) {
+  .page-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .page-header .page-header__container-logo {
   display: flex;
   justify-content: center;
@@ -36,6 +44,11 @@
   color: #2b2a8f;
   z-index: 1;
 }
+@media (max-width: 1000px) {
+  .page-header .page-header__container-info .page-header__data {
+    font-size: clamp(3em, 7vw, 15em);
+  }
+}
 .page-header .page-header__container-info .page-header__dia-mulheres {
   font-family: "begika", "Times New Roman", Times, serif;
   font-size: clamp(2em, 4vw, 10em);
@@ -47,16 +60,15 @@
 @media (max-width: 1000px) {
   .page-header .page-header__container-info .page-header__dia-mulheres {
     font-family: "begika", "Times New Roman", Times, serif;
-    font-size: clamp(2em, 5vw, 34em);
+    font-size: clamp(3em, 7vw, 15em);
     font-weight: 100;
     color: #ececec;
     letter-spacing: 1px;
-    line-height: 30px;
+    line-height: 50px;
   }
 }
 .page-header .page-header__container-info .page-header__container-kit-charm {
   position: relative;
-  letter-spacing: px;
   z-index: 1;
 }
 .page-header .page-header__container-info .page-header__container-kit-charm .page-header__kit {
@@ -68,7 +80,7 @@
   left: 25%;
   top: -10%;
 }
-.page-header .page-header__container-info .page-header__container-kit-charm .page-header__title-1 {
+.page-header .page-header__container-info .page-header__container-kit-charm .page-header__title {
   font-family: "begika", "Times New Roman", Times, serif;
   font-size: clamp(3em, 7vw, 15em);
   font-weight: 100;
@@ -95,6 +107,11 @@
   transform: translate(100px, -100px);
   position: absolute;
   z-index: 1;
+}
+@media (max-width: 1000px) {
+  .main-banner .main-banner__price {
+    transform: translate(60px, -40px);
+  }
 }
 .main-banner .main-banner__price strong {
   font-size: clamp(0.5em, 1vw, 2em);
@@ -514,7 +531,6 @@
   }
 }
 .footer-page .footer-page__content {
-  border: solid navy;
   display: flex;
   justify-content: center;
   align-items: flex-start;

@@ -7,7 +7,10 @@
   padding: var.$large-space;
   width: 100%;
   background-color: var.$first-color;
-  
+
+  @include mixins.media-queries(medium){
+    @include mixins.flex($direction: column, $align: center, $justify: center);
+  }
   .page-header__container-logo{
     @include mixins.flex($justify: center, $align: center);
     padding: var.$small-space;
@@ -25,10 +28,14 @@
   
   .page-header__container-info{
     @include mixins.flex($direction: column, $justify: center, $align: start);
-    
+        
     .page-header__data{
       @include mixins.font( $font: var.$first-font, $size: var.$title-2, $color: var.$third-color);
       z-index: 1;
+
+      @include mixins.media-queries(medium){
+        font-size: var.$title-1;
+      }
     }
     
     .page-header__dia-mulheres{
@@ -37,16 +44,14 @@
       line-height: 60px;
       
       @include mixins.media-queries(medium){
-        @include mixins.font( $font: var.$secondary-font, $size: clamp(2em, 5vw, 34em), $color: var.$clear-color-1, $weight: 100);
+        @include mixins.font( $font: var.$secondary-font, $size: var.$title-1, $color: var.$clear-color-1, $weight: 100);
         letter-spacing: 1px;
-        line-height: 30px;
-        
+        line-height: 50px;
       }
     }
     
     .page-header__container-kit-charm{
       position: relative;
-      letter-spacing: px;
       z-index: 1;
 
       .page-header__kit{
@@ -56,9 +61,8 @@
         left: 25%;
         top: -10%;
       }
-      .page-header__title-1{
+      .page-header__title{
         @include mixins.font( $font: var.$secondary-font, $size: var.$title-1, $color: var.$second-color, $weight: 100);
-
       }
     }
     
