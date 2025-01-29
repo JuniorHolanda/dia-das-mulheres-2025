@@ -9,7 +9,7 @@
   
   .main-banner__price{
     @include mixins.flex($align: center, $justify: center);
-    @include mixins.font( $font: var.$secondary-font, $size: var.$title, $color: var.$clear-color-1, $weight: 100);
+    @include mixins.font( $font: var.$secondary-font, $size: var.$title-1, $color: var.$clear-color-1, $weight: 100);
     transform: translate(100px, -100px);
     position: absolute;
     z-index: 1;

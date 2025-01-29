@@ -56,8 +56,8 @@
         left: 25%;
         top: -10%;
       }
-      .page-header__title{
-        @include mixins.font( $font: var.$secondary-font, $size: var.$title, $color: var.$second-color, $weight: 100);
+      .page-header__title-1{
+        @include mixins.font( $font: var.$secondary-font, $size: var.$title-1, $color: var.$second-color, $weight: 100);
 
       }
     }

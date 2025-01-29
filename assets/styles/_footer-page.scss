@@ -19,7 +19,7 @@
     border-radius: var.$small-border;
     background-color: var.$dark-color;
 
-    .footer-page-titles{
+    .footer-page-title-1s{
       @include mixins.font( $font: var.$simple-font, $size: var.$text, $color: var.$clear-color-1, $weight: 900);
       text-align: start;
     }

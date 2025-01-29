@@ -2,163 +2,190 @@
 @use 'mixins';
 
 .studioBrin{
-  @include mixins.flex($direction: column, $align: center, $justify: center);
+  display: grid;
+  grid-template: 2fr 8fr / 1fr 1fr;
   width: 80%;
-  height: 100vh;
-  gap: var.$medium-space;
+  column-gap: var.$small-space;
+  align-content: start;
+
+  @include mixins.media-queries(medium){
+    grid-template-rows: 2fr 4fr 4fr;
+    grid-template-columns: none;
+    gap: var.$small-space;
+  }
+
+  @include mixins.media-queries(micro){
+    display: none;
+  }
   
   .studioBrin__title{
-    @include mixins.font( $font: var.$secondary-font, $size: var.$title-3, $color: var.$clear-color-1, $weight: 100);
+    @include mixins.font( $font: var.$simple-font, $size: var.$title-2, $color: var.$clear-color-1, $weight: 900);
+    grid-area: 1/1/2/3;
     padding: var.$small-space;
+    margin-bottom: var.$micro-small-space;
     border-radius: var.$micro-small-border;
     text-align: center;
     background-color: var.$first-color;
+
+    @include mixins.media-queries(medium){
+      grid-area: 1/1/2/3;
+      margin-bottom: 0;
+    }
   }
-  
-  .studioBrin__content{
-    @include mixins.flex($align: center, $justify: center);
+  .studioBrin__controlls{
+    @include mixins.flex($direction: column, $align: center, $justify: center);
+    gap: var.$small-space;
+    overflow: hidden;
     width: 100%;
-    height: 80%;
-    gap: var.$medium-space;
-    
-    .studioBrin__controlls{
+    height: 100%;
+
+    @include mixins.media-queries(medium){
+      grid-area: 2/1/3/3;
+    }
+
+    .studioBrin__input-container{
       @include mixins.flex($direction: column, $align: center, $justify: center);
-      gap: var.$small-space;
-      overflow: hidden;
-      width: 50%;
+      @include mixins.font( $font: var.$secondary-font, $size: var.$title-2, $color: var.$clear-color-1, $weight: 100);
+      padding: 16px;
+      position: relative;
+      width: 100%;
       height: 100%;
-      border-radius: var.$micro-small-space;
-      background-color: var.$clear-color-1;
+      transition: .3s;
+      border-radius: var.$slim-border;
+      background-color: var.$clear-color-3;
 
-      .studioBrin__input-container{
-        @include mixins.flex($direction: column, $align: center, $justify: center);
-        @include mixins.font( $font: var.$secondary-font, $size: var.$title-2, $color: var.$clear-color-1, $weight: 100);
-        padding: 16px;
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transition: .3s;
-        border-radius: var.$slim-border;
-        background-color: var.$clear-color-3;
-
-        &:hover{
-          background-color: var.$clear-color-2;
-        }
-        
-        .studidoBrin__label{
-          @include mixins.flex($direction: column, $align: center, $justify: center);
-          gap: var.$micro-small-space;
-          padding: var.$micro-small-space;
-          text-align: center;
-          width: 100%;
-          height: 100%;
-          cursor: pointer;
-          border: dashed var.$clear-color-1;
-          border-radius: var.$slim-border;
-          transition: background .3s;
-
-
-          @include mixins.media-queries(medium){
-            i{
-              font-size: clamp(2em, 1.5vw, 2em);
-            }
-            font-size: clamp(1em, 1vw, 2em);
-          }
-        }
- 
-        .studioBrin__input{
-          position: absolute;
-          opacity: 0;
-        }
-      }
-
-      .studioBrin__input-container--active{
-        background-color: var.$clear-color-2;
+      &:hover{
+        background-color: var.$clear-color-1;
+        color: var.$dark-color;
       }
       
-      .studioBrin__container-colors{
-        @include mixins.flex($align: center, $justify: space-between);
+      .studidoBrin__label{
+        @include mixins.flex($direction: column, $align: center, $justify: center);
         gap: var.$micro-small-space;
-        width: 100%;        
-        
-        :nth-child(1){
-          background-color: #8a716a;
-        }
-        :nth-child(2){
-          background-color: #5b3a31;
-        }
-        :nth-child(3){
-          background-color: #d5a0aa;
-        }
-        :nth-child(4){
-          background-color: #d2065f;
-        }
-        :nth-child(5){
-          background-color: #151515;
-        }
-        
-        .studioBrin__btn-color{
-          @include mixins.flex($align: center, $justify: center);
-          @include mixins.font( $font: var.$first-font, $size: var.$text, $color: var.$clear-color-1, $weight: 100);
-          flex-grow: 1;
-          cursor: pointer;
-          width: 100%;
-          aspect-ratio: 1 / 1;
-          transition: .3s;
-          border-radius: var.$slim-border;
+        padding: var.$micro-small-space;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        border: dashed var.$clear-color-1;
+        border-radius: var.$slim-border;
+        transition: background .3s;
 
-          &:hover{
-            filter: brightness(120%);
-            font-size: calc(var.$text * 1.1);
+        @include mixins.media-queries(medium){
+          i{
+            font-size: clamp(1em, 1vw, 1em);
           }
-        }
-
-        .studioBrin__btn-color--active{
-          transition: .3s;
-          font-size: var.$text;
-          box-shadow: inset 0 0 0 var.$micro-small-border var.$clear-color-2;
+          font-size: clamp(.7em, 1vw, 1em);
         }
       }
+
+      .studioBrin__input{
+        position: absolute;
+        opacity: 0;
+      }
+    }
+
+    .studioBrin__input-container--active{
+      background-color: var.$clear-color-2;
     }
     
-    .studioBrin__img-container{
-    @include mixins.flex($direction: column, $align: center, $justify: center);
-    position: relative;
-    z-index: 1;
+    .studioBrin__container-colors{
+      @include mixins.flex($align: center, $justify: space-between);
+      gap: var.$micro-small-space;
+      width: 100%;
+      padding: var.$small-space; 
+      background-color: var.$clear-color-3;
+      border-radius: var.$slim-border;
+      :nth-child(1){
+        background-color: #8a716a;
+      }
+      :nth-child(2){
+        background-color: #5b3a31;
+      }
+      :nth-child(3){
+        background-color: #d5a0aa;
+      }
+      :nth-child(4){
+        background-color: #d2065f;
+      }
+      :nth-child(5){
+        background-color: #151515;
+      }
+      
+      .studioBrin__btn-color{
+        @include mixins.flex($align: center, $justify: center);
+        @include mixins.font( $font: var.$first-font, $size: var.$text, $color: var.$clear-color-1, $weight: 100);
+        flex-grow: 1;
+        cursor: pointer;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        transition: .3s;
+        border-radius: var.$slim-border;
+
+        &:hover{
+          filter: brightness(120%);
+          font-size: calc(var.$text * 1.1);
+        }
+      }
+
+      .studioBrin__btn-color--active{
+        transition: .3s;
+        font-size: var.$text;
+        //box-shadow: inset 0 0 0 var.$micro-small-border var.$clear-color-3;
+        box-shadow: 0 0 10px 1px rgb(255, 255, 255);
+      }
+    }
+  } 
+  .studioBrin__img-container{
+  @include mixins.flex($direction: column, $align: center, $justify: center);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var.$micro-small-border;
+  background-color: var.$clear-color-3;
+
+  @include mixins.media-queries(medium){
+    grid-area: 3/1/4/3;
+  }
+
+  .studioBrin__client-logo{
+    position: absolute;
+    width: clamp(2em, 6vw, 400px);
+    z-index: 2;
+    transform: translateY(-50%);
+    top: 52%;
+    right: 15%;
+
+    @include mixins.media-queries(medium){
+      width: clamp(5em, 3vw, 200px);
+      right: 15%;
+    }
+
+    @include mixins.media-queries(small){
+      width: clamp(4em, 2vw, 200px);
+      right: 13%;
+    }
+  }
+
+  .studioBrin__color-img, .stidoBrin__background-img{
+    position: absolute;
+    object-fit: cover;
     overflow: hidden;
-    width: 50%;
-    height: 100%;
-    aspect-ratio: 16 / 10;
-    border-radius: var.$micro-small-border;
+    width: 90%;
+    z-index: 1;
+    border-radius: var.$small-space;
 
-    .studioBrin__client-logo{
-      position: absolute;
-      width: clamp(2em, 6vw, 400px);
-      z-index: 2;
-      transform: translateY(-50%);
-      top: 52%;
-      right: 12%;
-
-      @include mixins.media-queries(medium){
-        width: clamp(1.3em, 3vw, 200px);
-        right: 15%;
-      }
-    }
-
-    .studioBrin__color-img{
-      position: absolute;
-      object-fit: cover;
+    @include mixins.media-queries(medium){
       width: 100%;
-      z-index: 1;
     }
-    
-    .stidoBrin__background-img{
-      position: absolute;
-      object-fit: cover;
-      width: 100%;
-      z-index: 0;
-    }
+  }
+  
+  .stidoBrin__background-img{
+    z-index: 0;
+  }
 
-    }
   }
 }
