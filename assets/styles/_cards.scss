@@ -31,7 +31,7 @@
     }
 
     @include mixins.media-queries(medium){
-      grid-template: .2fr 7fr 2.8fr / 7fr 3fr;
+      @include mixins.flex($direction: column, $align: center, $justify: center);
       pointer-events: none;
     }
 
@@ -39,6 +39,11 @@
       @include mixins.font( $font: var.$first-color, $size: var.$text, $color: var.$third-color, $weight: 100);
       grid-area: 1/1/2/3;
       width: 100%;
+
+      @include mixins.media-queries(medium){
+        text-align: center;
+        height: 5%;
+      }
     }
     
     .cards__container-img{
@@ -48,6 +53,10 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
+
+      @include mixins.media-queries(medium){
+        height: 15%;
+      }
       
       .cards__image-main{ 
         @include mixins.flex($align: center, $justify: center);
@@ -70,11 +79,13 @@
       @include mixins.font( $font: var.$first-font, $size: var.$title-2, $color: var.$third-color, $weight: 100);
       grid-area: 3/1/4/2;
       height: 100%;
+
       @include mixins.media-queries(medium){
         @include mixins.flex($align: center, $justify: center);
-        grid-area: 3/1/4/3;
-        font-size: var.$title-1;
+        font-size: var.$title-2;
         text-align: center;
+        height: 10%;
+        border: solid maroon;
       }
     }
     .cards__text{
@@ -83,7 +94,7 @@
       border: solid navajowhite;
 
       @include mixins.media-queries(medium){
-        grid-area: 4/1/5/2;
+        grid-area: 3/1/4/2;
       }
     }
     
@@ -96,8 +107,9 @@
       padding: var.$micro-small-space;
       
       @include mixins.media-queries(medium){
-        grid-area: 4/2/5/3;
-        font-size: var.$title-1;
+        grid-area: 4/1/5/3;
+        font-size: var.$title-2;
+        width: 100%;
       }
     }
   }
