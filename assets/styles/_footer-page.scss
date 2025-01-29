@@ -6,9 +6,13 @@
   width: 100%;
   height: 100%;
   background-color: var.$clear-color-3;
-  padding: 0 10%;
+  padding: 0 var.$small-space;
   gap: var.$small-space;
   background-color: var.$clear-color-1;
+
+  @include mixins.media-queries(medium){
+    padding: var.$small-space;
+  }
 
   .footer-page__rules{
     @include mixins.flex($align: space-between, $justify: center);
@@ -18,24 +22,43 @@
     text-align: center;
     border-radius: var.$small-border;
     background-color: var.$dark-color;
+    
+    @include mixins.media-queries(medium){
+      @include mixins.flex($direction: column, $align: center, $justify: center);
+    }
 
-    .footer-page-title-1s{
+    .footer-page-title{
       @include mixins.font( $font: var.$simple-font, $size: var.$text, $color: var.$clear-color-1, $weight: 900);
       text-align: start;
+      @include mixins.media-queries(medium){
+        text-align: center;
+      }
     }
   }
   
   .footer-page__content{
+    border: solid navy;
     @include mixins.flex($justify: center, $align: flex-start);
     gap: var.$medium-space;
     width: 100%;
     height: 45vh;
+
+    @include mixins.media-queries(medium){
+      @include mixins.flex($direction: column, $align: center, $justify: center);
+      height: 100%;
+      pointer-events: none;
+    }
     
     .footer-page__phone{
       @include mixins.flex($direction: column, $align: start, $justify: space-between);
       gap: var.$small-space;
       height: 100%;
-      width: 33%;    
+      width: 33%;
+      
+      @include mixins.media-queries(medium){
+        width: 100%;
+        height: auto;
+      }
   
       .footer-page__perfil-container{
         @include mixins.flex($align: center, $justify: center);
@@ -89,6 +112,10 @@
             
             .footer-page__email{
               @include mixins.font($font: var.$simple-font, $size: var.$text, $color: var.$third-color, $weight: 300);
+
+              @include mixins.media-queries(medium){
+                font-size: .8em;
+              }
             }
           }
         }
@@ -103,6 +130,9 @@
       height: 100%;
       overflow: hidden;
       z-index: 1;
+      @include mixins.media-queries(medium){
+        display: none;
+      }
       
       .footer-page__link-site, .footer-page__link-instagram{
         @include mixins.flex($direction: column, $align: center, $justify: center);
@@ -113,6 +143,7 @@
         width: 100%;
         height: 100%;
         transition: .3s;
+
         
         &:hover{
           color: var.$clear-color-1;
@@ -132,6 +163,6 @@
     }
   }
   .ass{
-    @include mixins.font($font: var.$simple-font, $size: var.$text, $color: var.$clear-color-2, $weight: 900);
+    @include mixins.font($font: var.$simple-font, $size: var.$text, $color: var.$clear-color-3, $weight: 900);
   }
 }

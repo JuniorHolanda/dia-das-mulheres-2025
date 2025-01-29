@@ -84,14 +84,11 @@
         @include mixins.flex($align: center, $justify: center);
         font-size: var.$title-2;
         text-align: center;
-        height: 10%;
-        border: solid maroon;
       }
     }
     .cards__text{
       @include mixins.font( $font: var.$simple-font, $size: var.$text, $color: var.$dark-color, $weight: 100);
       grid-area: 4/1/5/3;
-      border: solid navajowhite;
 
       @include mixins.media-queries(medium){
         grid-area: 3/1/4/2;
