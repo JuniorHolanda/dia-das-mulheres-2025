@@ -70,6 +70,7 @@
         transition: .3s;
         overflow: hidden;
         color: var.$dark-color;
+        cursor: pointer;
 
         &:hover{
           transform: translateX(-10px);

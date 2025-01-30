@@ -576,6 +576,7 @@
   transition: 0.3s;
   overflow: hidden;
   color: #2e313a;
+  cursor: pointer;
 }
 .footer-page .footer-page__content .footer-page__phone .footer-page__perfil-container:hover {
   transform: translateX(-10px);
