@@ -1,0 +1,48 @@
+@use 'variables' as var;
+@use 'mixins';
+
+.photo-360{
+    @include mixins.flex($direction: column, $align: center, $justify: center);
+    background-color: var.$clear-color-2;
+    width: 100%;
+    padding: var.$large-space;
+    
+    .photo-360__content{
+        @include mixins.flex($direction: column, $align: center, $justify: center);
+        padding: var.$medium-border;
+        border-radius: var.$small-border;
+        background-color: var.$clear-color-3;
+        width: 50%;
+        .photo-360__container-img{
+            @include mixins.flex($direction: column, $align: center, $justify: center);
+            width: 100%;
+            border-radius: var.$small-border;
+            overflow: hidden;
+            position: relative;
+        
+            .photo-360__icon{
+                position: absolute;
+                width: clamp(5em, 5vw, 7em);
+                top: 4%;
+                right: 7%;
+            }
+
+            .photo-360__product{
+                width: 100%;
+            }
+        }
+        
+        .photo-360__label{
+            @include mixins.flex($direction: column, $align: center, $justify: center);
+            @include mixins.font( $font: var.$simple-font, $size: var.$title-2, $color: var.$clear-color-3, $weight: 900);
+            padding: var.$micro-small-border;
+            width: 100%;
+        }
+    
+        [type="range"]{
+            width: 100%;
+        } 
+    }
+    
+    
+}
